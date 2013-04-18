@@ -24,10 +24,25 @@ process.argv.forEach(function(val, index, array) {
 	}
 });
 
+var host = process.argv[2];
+var port = 25565;
+var user = process.argv[3];
+var passwd = process.argv[4];
+
+if (host.indexOf(':') != -1) {
+	port = host.substring(host.indexOf(':')+1);
+	host = host.substring(0, host.indexOf(':'));
+}
+
+console.log("connecting to " + host + ":" + port);
+console.log("user: " + user);
+console.log("passwd: " + Array(passwd.length).join('*'));
+
 var bot = mineflayer.createBot({
-  host: process.argv[2],
-  username: process.argv[3],
-  password: process.argv[4]
+	host: host,
+	port: port,
+	username: user,
+	password: passwd
 });
 
 rl.on('line', function(line) {
@@ -35,5 +50,5 @@ rl.on('line', function(line) {
 });
 
 bot.on('chat', function(username, message) {
-  console.log(username + ": " + message);
+	console.log(username + ": " + message);
 });
