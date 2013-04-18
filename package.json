@@ -9,6 +9,6 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"minechat": ">=0.1.0",
+		"mineflayer": ">=0.1.0"
 	}
 }
