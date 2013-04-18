@@ -1,0 +1,14 @@
+{
+	"name": "minechat",
+	"version": "0.1.0",
+	"description": "Command-line Minecraft chat client",
+	"main": "minechat.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/llbit/minechat.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"minechat": ">=0.1.0",
+	}
+}
