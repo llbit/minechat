@@ -36,7 +36,6 @@ if (host.indexOf(':') != -1) {
 
 console.log("connecting to " + host + ":" + port);
 console.log("user: " + user);
-console.log("passwd: " + Array(passwd.length).join('*'));
 
 var bot = mineflayer.createBot({
 	host: host,
