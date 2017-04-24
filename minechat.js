@@ -8,10 +8,10 @@ var rl = readline.createInterface({
 });
 
 function print_help() {
-	console.log("usage: node minechat.js <hostname> <user> <password>");
+	console.log("usage: PASSWORD=<password> node minechat.js <hostname>[:port] <user>");
 }
 
-if (process.argv.length < 5) {
+if (process.argv.length < 4 || !("PASSWORD" in process.env)) {
 	console.log("Too few arguments!");
 	print_help();
 	process.exit(1);
@@ -27,7 +27,7 @@ process.argv.forEach(function(val, index, array) {
 var host = process.argv[2];
 var port = 25565;
 var user = process.argv[3];
-var passwd = process.argv[4];
+var passwd = process.env.PASSWORD;
 
 if (host.indexOf(':') != -1) {
 	port = host.substring(host.indexOf(':')+1);
